@@ -1,0 +1,72 @@
+% --- Osnovna konfiguracija dokumenta ---
+\documentclass[12pt, oneside, a3paper, hidelinks]{report}
+
+% --- Kodiranje i jezik ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[croatian]{babel}
+
+% --- Font ---
+%\usepackage{lmodern}
+\usepackage{newtx}
+
+% --- Margine i orijentacija stranice ---
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+\geometry{landscape}
+
+% --- Razmak između redova ---
+\usepackage{setspace}
+\linespread{1}
+
+% --- Grafika i rotacija grafika ---
+\usepackage{graphicx}
+\usepackage{rotating}
+
+% --- Tablice ---
+\usepackage{tabularx}
+
+% --- Prilagođene širine stupaca za naslovnu stranicu ---
+% Total width %
+% 420 mm - 1 in * 2 %
+% Column extra width 4.36 mm %
+\newlength{\colonewidth}
+\setlength{\colonewidth}{17.351cm}
+\newlength{\coltwowidth}
+\setlength{\coltwowidth}{1.564cm} % 2 cm %
+
+% --- Metapodaci dokumenta ---
+\newcommand{\mytitle}{Naslov rada}
+\newcommand{\myauthor}{Ime i prezime}
+\date{2025.}
+
+\begin{document}
+	\pagenumbering{gobble}
+	
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{|p{\colonewidth}|p{\coltwowidth}|p{\colonewidth}|}
+			\hline
+			&
+			\parbox[c][\textheight][c]{\coltwowidth}{
+				\centering
+				\rotatebox{90}{\large\textbf{\myauthor \vspace*{1ex} \(\blacklozenge\) DIPLOMSKI RAD \(\blacklozenge\) 2025.}}}
+			& 
+			\parbox[c][\textheight][c]{\colonewidth}{
+				\centering
+				\vskip \baselineskip
+				\large\textbf{\MakeUppercase{Sveučilište u Zagrebu\\Geodetski fakultet}} \\
+				\vfill
+				\Large{\myauthor} \\
+				\vspace{1in}
+				\LARGE\textbf{\MakeUppercase{\mytitle}} \\
+				\vspace{1in}
+				\Large{Diplomski rad} \\
+				\vfill
+				\large{Zagreb, 2025.}
+				\vskip \baselineskip
+			} \\
+			\hline
+		\end{tabular}
+	\end{table}
+
+\end{document}
